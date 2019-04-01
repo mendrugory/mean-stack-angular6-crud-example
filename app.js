@@ -5,7 +5,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mean-angular6')
+const MONGO_HOST = process.env.MONGO_HOST
+mongoose.connect(MONGO_HOST)
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
